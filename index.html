@@ -38,11 +38,11 @@
           <div class="menu-wrapper">
             <div class="menu">
               <ul class="menu__list">
-                <li class="menu__list__item" id="service">Про сервіс</li>
-                <li class="menu__list__item" id="how-it-works">
+                <li class="menu__list__item lang" id="service" key="about">Про сервіс</li>
+                <li class="menu__list__item lang" id="how-it-works" key="how">
                   Як це працює?
                 </li>
-                <li class="menu__list__item" id="contacts">Контакти</li>
+                <li class="menu__list__item lang" id="contacts" key="contacts">Контакти</li>
               </ul>
             </div>
             <div class="menu-button">
@@ -56,16 +56,16 @@
           </div>
           <div class="lang-change">
             <ul>
-              <li>UA</li>
-              <li>EN</li>
+              <li id="ua" class="translate">UA</li>
+              <li id="en" class="translate">EN</li>
             </ul>
           </div>
         </div>
 
         <!-- ================================================================ -->
         <div class="hero">
-          <h1>Lorem ipsum dolor sit amet.</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta.</p>
+          <h1 class="lang" key="header_title">Тут ви бачите заголовок українською</h1>
+          <p class="lang" key="header_content">Тут ви можете бачити контент українською, перемикачі працюють справно.</p>
         </div>
       </div>
       <div id="popup1" class="popup">
@@ -79,15 +79,12 @@
                 <use href="./img/close-button.svg#icon-cross"></use>
               </svg>
             </div>
-            <div class="popup_title">Про сервіс</div>
-            <div class="popup_text">
+            <div class="popup_title lang" key="about_title">Про сервіс</div>
+            <div class="popup_text lang">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut enim
               vero ve velit assumenda soluta sed ad, omnis alias placeat debitis
               voluptas ea ip dolorum error dolorem, a blanditiis! Quidem! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. In repellendus,
-              impedit quis atque vero, cum incidunt molestiae architecto
-              quibusdam consequatur obcaecati autem eligendi nesciunt non a.
-              Velit suscipit aliquam debitis.
+              ipsum dolor sit amet consectetur adipisicing elit.
             </div>
           </div>
         </div>
@@ -103,7 +100,7 @@
                 <use href="./img/close-button.svg#icon-cross"></use>
               </svg>
             </div>
-            <div class="popup_title">Як це працює?</div>
+            <div class="popup_title video_title lang" key="how_title">Як це працює?</div>
             <div class="popup-video">
               <iframe
                 src="https://www.youtube.com/embed/yNXdMFvMCyI?enablejsapi=1"
@@ -119,7 +116,7 @@
       <!-- ===================================ТРЕТИЙ ПОП-АП С ФОРМОЙ========================= -->
       <div id="popup3" class="popup">
         <div class="popup_body">
-          <div class="popup_content">
+          <div class="popup_content form-content">
             <div class="logo-modal logo">
               <img src="./img/logo/logo-offery.png" alt="logo-offery" />
             </div>
@@ -128,15 +125,16 @@
                 <use href="./img/close-button.svg#icon-cross"></use>
               </svg>
             </div>
-            <div class="popup_title">Контакти</div>
-            <form class="modal-form" action="#" id="form">
+            <div class="popup_title lang" key="contacts_title">Контакти</div>
+            <form class="modal-form" action="send_mail.php" id="form">
               <label class="modal-form__field"
                 >Name
                 <span class="modal-form__input-wrapper">
                   <input
-                    class="modal-form__input"
+                    id="formName"
+                    class="modal-form__input _req"
                     type="text"
-                    name="user-name"
+                    name="name"
                     minlength="2"
                     autofocus
                     required
@@ -155,9 +153,10 @@
                 >Company
                 <span class="modal-form__input-wrapper">
                   <input
-                    class="modal-form__input"
+                    id="formCompany"
+                    class="modal-form__input _req"
                     type="text"
-                    name="user-company"
+                    name="company"
                     pattern="[a-zA-Zа-яёА-Я]+"
                     title="Используйте буквы латиницы или кирилицы"
                     required
@@ -175,9 +174,10 @@
                 >E-mail
                 <span class="modal-form__input-wrapper">
                   <input
-                    class="modal-form__input"
+                    id="formEmail"
+                    class="modal-form__input _req _email"
                     type="email"
-                    name="user-email"
+                    name="email"
                     validate
                   />
                   <!-- <svg class="modal-form__input-icon" width="18" height="18">
@@ -190,7 +190,8 @@
 
               <label class="modal-form__field">Comments</label>
               <textarea
-                class="modal-form__message"
+                id="formComments"
+                class="modal-form__message _req"
                 placeholder="Type something..."
                 name="comments"
               ></textarea>
@@ -210,7 +211,7 @@
     <script src="./js/main.js"></script>
     <script src="./js/youtube-video-pause.js"></script>
     <script src="./js/form-button-animation.js"></script>
-    <script src="./sendmail/form-submit.js"></script>
+    <script src="./js/form-submit.js"></script>
     <!-- <script src="./js/form-button.js"></script> -->
   </body>
 </html>

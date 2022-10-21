@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', formSend);
 
     async function formSend (e) {
+        console.log(form);
         e.preventDefault();
 
         let formData = new FormData(form);
+        console.log(formData);
 
         let response = await fetch('sendmail.php', {
             method: 'POST',

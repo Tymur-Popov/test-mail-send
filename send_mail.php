@@ -20,19 +20,16 @@
     //тело письма
     $body = '<h1>Новый клиент!</h1>'
 
-    if(trim(!empty($_POST['name']))) {
-        $body.='<p><strong>Name:</strong> '.$_POST['name'].'</p>';
-    }
+    $body.='<p><strong>Name:</strong>'.$_POST['name'].'</p>';
 
-    if(trim(!empty($_POST['company']))) {
-        $body.='<p><strong>Company:</strong> '.$_POST['company'].'</p>';
-    }
+    
+    $body.='<p><strong>Company:</strong>'.$_POST['company'].'</p>';
 
-    if(trim(!empty($_POST['email']))) {
-        $body.='<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
-    }
+    
+    $body.='<p><strong>E-mail:</strong>'.$_POST['email'].'</p>';
+    
 
-    $body.='<p><strong>Comments:</strong> '.$_POST['comments'].'</p>';
+    $body.='<p><strong>Comments:</strong>'.$_POST['comments'].'</p>';
 
 
     $mail->Body = $body;
